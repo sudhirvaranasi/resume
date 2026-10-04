@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudhir Varanasi - Software Engineer & CAE Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a3a52;
+            --accent-color: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border-color: #e5e7eb;
+            --bg-light: #ffffff;
+            --bg-darker: #f9fafb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-dark: #f3f4f6;
+                --text-light: #d1d5db;
+                --border-color: #374151;
+                --bg-light: #111827;
+                --bg-darker: #1f2937;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+
+        .pdf-button-wrapper {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .pdf-download-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .pdf-download-btn:hover {
+            background-color: #1d47cc;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .name-title h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .name-title p {
+            font-size: 1.2em;
+            color: var(--text-light);
+        }
+
+        .professional-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: var(--text-dark);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 1.05em;
+            color: var(--text-dark);
+            margin: 15px 0 5px 0;
+            font-weight: 600;
+        }
+
+        /* Professional Summary */
+        .summary-text {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            padding: 12px;
+            background-color: var(--bg-darker);
+            border-left: 3px solid var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .skill-item strong {
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .skill-item p {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .job-company {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .job-dates {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .job-description {
+            margin-top: 10px;
+        }
+
+        .job-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-description li {
+            margin: 8px 0 8px 20px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .job-description li:before {
+            content: "▸";
+            position: absolute;
+            left: -12px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .subsection {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .subsection h4 {
+            color: var(--text-dark);
+            margin-top: 10px;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background-color: var(--bg-darker);
+            border-radius: 4px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .institution {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .grade {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+            }
+
+            .name-title h1 {
+                font-size: 2em;
+            }
+
+            .skill-list {
+                grid-template-columns: 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="pdf-button-wrapper">
+                <button class="pdf-download-btn" onclick="downloadResumePDF()" title="Download resume as PDF">📥 Download PDF</button>
+            </div>
+
+            <div class="header-top">
+                <div style="margin-right: 30px; margin-bottom: 15px;">
+                    <img src="pic.jpg" alt="Sudhir Varanasi Profile Picture" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color); box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);">
+                </div>
+                <div class="name-title">
+                    <h1>Sudhir Varanasi</h1>
+                    <div class="professional-tags">
+                        <span class="tag-badge">CAE Engineer</span>
+                        <span class="tag-badge">AI/ML Engineer</span>
+                        <span class="tag-badge">Surrogate Modelling</span>
+                        <span class="tag-badge">Python Developer</span>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div>📍 Derby, UK</div>
+                    <div>📞 (+44) 7466 296 348</div>
+                    <div><a href="mailto:sudhir.varanasi@gmail.com">✉️ sudhir.varanasi@gmail.com</a></div>
+                    <div><a href="https://linkedin.com/in/sudhir-varanasi" target="_blank">💼 LinkedIn Profile</a></div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#professional-summary">About</a>
+                <a href="#tools">Tools & Tech</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="ai-projects.html">🤖 AI Projects</a>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section id="professional-summary">
+            <h2>Professional Summary</h2>
+            <p class="summary-text">
+                Senior Software and CAE Engineer specialising in automation, simulation workflows, optimisation, and AI-enabled
+                engineering tools for complex mechanical and multi-physics systems. I combine mechanical engineering depth with practical
+                software development to build scalable solutions across geometry preparation, HPC-scale simulation, data handling, and
+                workflow orchestration. My recent work applies AI and data-driven methods to accelerate design optimisation, streamline
+                analysis processes, and support predictive engineering decisions, with a growing focus on agentic AI for NX and CAE environments.
+            </p>
+        </section>
+
+
+        <!-- AI-Related Experience -->
+        <section id="ai-experience">
+            <h2>AI & Machine Learning Experience</h2>
+
+            <div style="background-color: var(--bg-darker); padding: 25px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--success-color);">
+                <h3 style="color: var(--text-dark); margin-top: 0; margin-bottom: 15px;">Agentic AI & LLM Systems Architecture</h3>
+                <ul>
+                    <li><strong>Agentic AI Orchestration:</strong> Architecting autonomous agent systems using ReAct loops, tool/function calling, stateful memory management, and execution graph routing for CAE automation and engineering design workflows</li>
+                    <li><strong>LLMOps & Observability:</strong> Designing and deploying production LLM systems with LangSmith and Pydantic Logfire for structured guardrails, automated evaluations, latency tracking, and reliability monitoring</li>
+                    <li><strong>Multi-Agent Workflows:</strong> Building distributed multi-agent systems with MCP-based data layers for coordinated autonomous engineering decision-making and parallel design exploration</li>
+                </ul>
+            </div>
+
+            <div style="background-color: var(--bg-darker); padding: 25px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--success-color);">
+                <h3 style="color: var(--text-dark); margin-top: 0; margin-bottom: 15px;">RAG & Knowledge Systems</h3>
+                <ul>
+                    <li><strong>Retrieval-Augmented Generation:</strong> Building semantic retrieval pipelines using embeddings, vector databases, and LangChain for domain-specific engineering knowledge systems</li>
+                    <li><strong>Enterprise AI Frameworks:</strong> Leveraging enterprise AI development kits and LangGraph for building scalable RAG systems integrated with design automation platforms</li>
+                    <li><strong>Vector Database Architecture:</strong> Designing efficient vector storage and semantic search systems for engineering documentation, standards, and best practices retrieval</li>
+                </ul>
+            </div>
+
+            <div style="background-color: var(--bg-darker); padding: 25px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--success-color);">
+                <h3 style="color: var(--text-dark); margin-top: 0; margin-bottom: 15px;">Scientific Machine Learning & Deep Learning</h3>
+                <ul>
+                    <li><strong>Physics-Informed Neural Networks (PINNs):</strong> Developing neural networks that integrate physics constraints for accelerated surrogate modeling in engineering design optimization</li>
+                    <li><strong>Advanced ML Techniques:</strong> Implementing LSTMs, Autoencoders, VAEs, and GANs for time-series prediction, anomaly detection, and feature extraction from simulation/sensor datasets</li>
+                    <li><strong>Deep Learning Frameworks:</strong> Building neural network models using PyTorch and Keras with NumPy, Pandas, and SciPy for scientific computing and high-dimensional data analysis</li>
+                    <li><strong>Bayesian & Multi-Objective Optimization:</strong> Applying surrogate-based optimization, Gaussian Processes, NSGA-II, and evolutionary algorithms for robust multi-disciplinary design exploration</li>
+                </ul>
+            </div>
+
+            <div style="background-color: var(--bg-darker); padding: 25px; border-radius: 8px; border-left: 4px solid var(--success-color);">
+                <h3 style="color: var(--text-dark); margin-top: 0; margin-bottom: 15px;">Real-World AI Applications</h3>
+                <ul>
+                    <li><strong>AI-Driven Design Automation:</strong> Developing intelligent CAE workflows that autonomously explore design spaces using agentic AI and surrogate models, reducing design cycle time by 60-80%</li>
+                    <li><strong>Predictive Engineering:</strong> Building ML models for predicting component failures, thermal behavior, and structural integrity under complex operating conditions</li>
+                    <li><strong>AI-Enabled Tools:</strong> Creating NX and CAE environment agents that understand engineering intent and autonomously configure simulations, run parametric studies, and optimize designs</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Tools & Technologies -->
+        <section id="tools">
+            <h2>Tools & Technologies</h2>
+
+            <!-- Top Row: Mechanical CAE & Programming -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 30px;">
+                <!-- Mechanical CAE Tools -->
+                <div style="background-color: var(--bg-darker); padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                    <h4 style="color: var(--text-dark); margin-top: 0; margin-bottom: 15px;">🔧 Mechanical CAE & Simulation</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>FEM Solvers:</strong> Abaqus/CAE, Ansys Mechanical, Simcenter 3D (NX)</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Preprocessing:</strong> Hypermesh, Simcenter pre-processing tools</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Specialized:</strong> NCode DesignLife (Fatigue), TOSCA (Topology Optimization), FESafe</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>CAD Integration:</strong> Siemens NX (NXOpen scripting for automation)</li>
+                        <li style="color: var(--text-light);"><strong>Optimization Tools:</strong> HEEDS, iSIGHT (DOE & MDO platforms)</li>
+                    </ul>
+                </div>
+
+                <!-- Programming Languages -->
+                <div style="background-color: var(--bg-darker); padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                    <h4 style="color: var(--text-dark); margin-top: 0; margin-bottom: 15px;">💻 Programming Languages & Frameworks</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Primary:</strong> Python (10+ years expertise), MATLAB, VB.NET, VBScript</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Backend Frameworks:</strong> FastAPI, Django, Flask</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Desktop UI:</strong> PySide6/PyQt6, Windows Forms</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Version Control:</strong> Git/GitHub, GitHub Actions (CI/CD)</li>
+                        <li style="color: var(--text-light);"><strong>Testing & Quality:</strong> pytest, unittest, code coverage analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Centered AI & ML Section -->
+            <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+                <div style="background-color: var(--bg-darker); padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent-color); max-width: 500px; width: 100%;">
+                    <h4 style="color: var(--text-dark); margin-top: 0; margin-bottom: 15px; text-align: center;">🤖 AI & Machine Learning Ecosystems</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Deep Learning:</strong> PyTorch, TensorFlow/Keras, JAX</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Scientific Computing:</strong> NumPy, SciPy, Pandas, Scikit-learn</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>SciML & Optimization:</strong> SciML (Julia), Optuna, Scipy.optimize</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>LLM & Agentic AI:</strong> LangChain, LangGraph, Claude API, OpenAI API</li>
+                        <li style="margin-bottom: 8px; color: var(--text-light);"><strong>Observability & Evaluation:</strong> LangSmith, Pydantic Logfire, Weights & Biases</li>
+                        <li style="color: var(--text-light);"><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly, TensorBoard</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background-color: var(--bg-darker); padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h4 style="color: var(--text-dark); margin-top: 0;">📦 Additional Tools & Platforms</h4>
+                <p style="color: var(--text-light); margin-bottom: 10px;"><strong>Containerization & DevOps:</strong> Docker, Docker Compose, Kubernetes basics</p>
+                <p style="color: var(--text-light); margin-bottom: 10px;"><strong>Data Handling:</strong> SQL (SQLite, PostgreSQL), HDF5 (large scientific datasets), JSON processing</p>
+                <p style="color: var(--text-light);"><strong>Cloud & Infrastructure:</strong> Linux/Windows environments, HPC job schedulers, bash/PowerShell scripting</p>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+
+            <!-- Timeline Overview -->
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--border-color);">
+                <div style="flex: 1; min-width: 200px; padding: 15px; background-color: var(--bg-darker); border-radius: 6px; border-left: 4px solid var(--accent-color);">
+                    <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 5px;">Principal Engineer</div>
+                    <div style="font-size: 0.95em; color: var(--text-light); margin-bottom: 5px;">Rolls-Royce India</div>
+                    <div style="font-size: 0.85em; color: var(--accent-color); font-weight: 600;">Dec 2015 – Dec 2020</div>
+                </div>
+                <div style="flex: 1; min-width: 200px; padding: 15px; background-color: var(--bg-darker); border-radius: 6px; border-left: 4px solid var(--accent-color);">
+                    <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 5px;">Consultant</div>
+                    <div style="font-size: 0.95em; color: var(--text-light); margin-bottom: 5px;">Infosys Limited</div>
+                    <div style="font-size: 0.85em; color: var(--accent-color); font-weight: 600;">Dec 2020 – Jan 2025</div>
+                </div>
+                <div style="flex: 1; min-width: 200px; padding: 15px; background-color: var(--bg-darker); border-radius: 6px; border-left: 4px solid var(--accent-color);">
+                    <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 5px;">Design System Engineer</div>
+                    <div style="font-size: 0.95em; color: var(--text-light); margin-bottom: 5px;">Rolls-Royce PLC</div>
+                    <div style="font-size: 0.85em; color: var(--accent-color); font-weight: 600;">Jan 2025 – Present</div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">Rolls-Royce & Infosys Strategic Partnership</div>
+                        <div class="job-title">Design System Automation & Software Methods Leadership</div>
+                    </div>
+                    <div class="job-dates">Dec 2015 – Present</div>
+                </div>
+                <p style="color: var(--text-light); font-size: 0.95em; margin-bottom: 20px;">Bangalore, India & Derby, UK</p>
+
+                <div class="job-description">
+                    <h4>Program Management & Strategic Initiatives</h4>
+                    <ul>
+                        <li>Served as Onsite Coordinator and Program Manager, acting as primary technical interface between business stakeholders and engineering teams</li>
+                        <li>Managed end-to-end commercial lifecycle for multi-team initiatives by responding to SOWs and preparing detailed delivery plans</li>
+                        <li>Executed procurement and project execution, leading formal technical reviews for deliverable compliance</li>
+                        <li>Served as key contributor to inception and scaling of the Software Methods & Data Analytics (SMDA) team</li>
+                        <li>Led global technical recruitment with structured evaluation rubrics and in-depth technical interviews</li>
+                        <li>Developed onboarding frameworks to mentor engineers in Python architecture and simulation automation</li>
+                        <li>Foundational role in building the Software Methods & Data Analytics capability within Rolls-Royce India</li>
+                    </ul>
+
+                    <h4>CAE Workflow Architecture & Automation</h4>
+                    <ul>
+                        <li><strong>Thermo-Structural Clearance Workflow (TSCW):</strong> Architected enterprise-scale Python automation framework for turbine seal, blade-tip, and compressor clearance evaluations with end-to-end simulation orchestration</li>
+                        <li><strong>CAE Integration & Coupled Thermo-Mechanical Analysis:</strong> Engineered fully automated pipelines integrating NX (NXOpen), Simcenter 3D, Abaqus, and Ansys for parametric geometry updates, transient component temperature evaluations, and high-fidelity localized stress/strain tracking</li>
+                        <li><strong>Multi-physics Pipeline & Automated Training Data Generation:</strong> Extended platform to evaluate seal stability margins, surge margins, and secondary flow efficiencies under transient cycles; automated parametric simulation execution generating large-scale datasets from workflow runs for ML model training</li>
+                        <li><strong>Statistical Surrogate Modeling:</strong> Constructed high-accuracy surrogate models using Gaussian Processes with Matern kernels for uncertainty quantification, Kriging interpolation for spatial prediction, and polynomial response surfaces for rapid design space approximation; all trained on workflow-generated simulation datasets</li>
+                        <li><strong>Physics-Informed Neural Networks (PINNs):</strong> Developed neural network surrogates that enforce physics constraints and governing equations within network architectures, enabling accurate predictions on sparse datasets while maintaining physical interpretability; integrated automatic differentiation for gradient-based optimization</li>
+                        <li><strong>Advanced Surrogate Architectures:</strong> Implemented radial basis function (RBF) networks and fully connected neural networks with multiple hidden layers, dropout regularization, and batch normalization for robust approximation of complex multi-disciplinary design spaces with high-dimensional parameter interactions</li>
+                        <li><strong>Surrogate Model Integration & Optimization Acceleration:</strong> Integrated surrogate models into automated optimization workflows enabling 60-80% reduction in evaluation time; established surrogate-assisted optimization loops where models adaptively suggest new evaluation points, dramatically accelerating convergence to optimal designs</li>
+                        <li><strong>Enterprise Automation & Optimization Orchestration:</strong> Built HEEDS and iSIGHT orchestration pipelines with automated surrogate model training loops, enabling autonomous design exploration driven by Latin Hypercube Sampling (DOE) and multi-objective evolutionary algorithms (NSGA-II, PSO)</li>
+                    </ul>
+
+                    <h4>Design Optimization & Multi-Disciplinary CAE</h4>
+                    <ul>
+                        <li><strong>Multi-Objective Optimization Strategies:</strong> Implemented NSGA-II (Non-dominated Sorting Genetic Algorithm II) and Particle Swarm Optimization (PSO) for Pareto frontier exploration across competing engineering constraints (thermal limits, structural stress, weight, manufacturability); established multi-objective design trade-off analysis for informed decision-making</li>
+                        <li><strong>Design of Experiments (DOE) & Sampling Strategies:</strong> Deployed Latin Hypercube Sampling (LHS) for space-filling experimental designs ensuring maximum design space coverage; combined with factorial designs and central composite designs for efficient surrogate model training data generation</li>
+                        <li><strong>Surrogate-Assisted Multi-Disciplinary Optimization (MDO):</strong> Integrated Gaussian Process metamodels with evolutionary algorithms to enable rapid design exploration by replacing expensive CAE simulations with trained surrogate predictions; established automated feedback loops where surrogates iteratively identify promising design regions</li>
+                        <li><strong>Constraint Handling & Robust Design:</strong> Incorporated physical and manufacturing constraints directly into optimization formulations; implemented penalty methods and constraint relaxation strategies for feasible design solutions; applied robust optimization techniques to handle parameter uncertainties and manufacturing tolerances</li>
+                        <li><strong>CAE-Driven Design Optimization:</strong> Coupled FEM-based simulation (Abaqus, Ansys) with optimization algorithms in closed-loop design exploration; automated sensitivity analysis to identify influential design parameters; established design optimization pipelines for turbine seals, compressor components, and engine structures</li>
+                    </ul>
+
+                    <h4>Frontend & User Interface Development</h4>
+                    <ul>
+                        <li>Designed responsive PySide-based desktop GUI for end-to-end multi-physics simulation setups with dynamic configuration file generation and validation</li>
+                        <li>Architected production Django web application for Six Sigma capability assessments on wax and cast manufacturing CMM data</li>
+                        <li>Engineered user-friendly monitoring dashboards using VB.NET and Windows Forms for real-time manufacturing data pipelines and data-transfer verification</li>
+                    </ul>
+
+                    <h4>Infrastructure & Performance Optimization</h4>
+                    <ul>
+                        <li><strong>HPC Scaling:</strong> Led cross-platform migration of Windows-centric TSCW application to run natively on Linux, implementing distributed parallel-processing for multi-node HPC environments</li>
+                        <li>Introduced process-level parallelism and intelligent resource scheduling, allowing multiple multidisciplinary simulation variants to run concurrently</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">General Motors India Technical Centre</div>
+                        <div class="job-title">Lead Engineer</div>
+                    </div>
+                    <div class="job-dates">Apr 2013 – Dec 2015</div>
+                </div>
+                <p style="color: var(--text-light); font-size: 0.95em;">Bangalore, India</p>
+                <div class="job-description">
+                    <h4>Abaqus Customization & Plugin Development</h4>
+                    <ul>
+                        <li><strong>Abaqus GUI Toolkit Plugins:</strong> Developed and deployed custom Abaqus GUI plugins using Python and the Abaqus GUI Toolkit to standardize and automate repetitive modeling procedures for sealing and gasket systems</li>
+                        <li><strong>Parametric Scripting & Automation:</strong> Programmed parametric scripting routines to automate generation, meshing, and boundary condition setup of intricate engine seal geometries, significantly reducing preprocessing time and minimizing manual errors</li>
+                        <li><strong>Post-Processing & Results Analysis:</strong> Created automated post-processing scripts to extract, parse, and visualize critical evaluation metrics (contact pressure profiles, stress distributions, deformation patterns), enabling rapid design iterations</li>
+                    </ul>
+
+                    <h4>Hyperelastic Material Characterization & Non-Linear FEM</h4>
+                    <ul>
+                        <li><strong>Material Testing & Curve Fitting:</strong> Led hyperelastic material characterization initiatives translating raw physical test data (uniaxial, biaxial, planar tension/compression tests) into highly accurate non-linear material models</li>
+                        <li><strong>Material Models:</strong> Implemented advanced hyperelastic models including Mooney-Rivlin, Neo-Hookean, Ogden, and Arruda-Boyce formulations calibrated from experimental stress-strain curves</li>
+                        <li><strong>Non-Linear FEM Analysis:</strong> Executed high-fidelity non-linear finite element simulations capturing large deformation, material non-linearity, and contact mechanics critical for seal performance prediction</li>
+                    </ul>
+
+                    <h4>Seal Design & Optimization (PIP, O-ring, RTV)</h4>
+                    <ul>
+                        <li><strong>Press-in-Place (PIP) Gaskets:</strong> Automated design and analysis of PIP gaskets for various engine applications; optimized contact geometry and compression to maintain sealing integrity under engine operating conditions</li>
+                        <li><strong>O-ring & Elastomeric Seals:</strong> Designed and optimized elastomeric O-rings for dynamic sealing applications; evaluated squeeze, friction, and wear behavior under cyclic loading and thermal cycling</li>
+                        <li><strong>RTV (Room Temperature Vulcanizing) Gaskets:</strong> Engineered RTV gasket designs with optimized coverage patterns and thickness for rapid deployment in high-volume applications</li>
+                        <li><strong>Contact Mechanics & Sealing Efficiency:</strong> Evaluated complex contact mechanics and sealing efficiency under multi-axial fastening preloads; established design guidelines for robust sealing performance across manufacturing tolerances</li>
+                    </ul>
+
+                    <h4>Engine Component Design & Optimization</h4>
+                    <ul>
+                        <li><strong>Front Cover & Housing Components:</strong> Designed structural and sealing aspects of engine front covers; balanced thermal deformation, stress concentrations, and seal margin requirements</li>
+                        <li><strong>Water Pump & Auxiliary Components:</strong> Optimized sealing systems for water pumps and other auxiliary engine components; ensured pressure containment, thermal stability, and durability under cyclic loading</li>
+                        <li><strong>Design Optimization & Trade-offs:</strong> Leveraged FEM-based design optimization to balance competing requirements (sealing margin, stress levels, manufacturing feasibility, cost); established Pareto-optimal designs for robust performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">GE Aviation</div>
+                        <div class="job-title">Engineer</div>
+                    </div>
+                    <div class="job-dates">May 2011 – Apr 2013</div>
+                </div>
+                <p style="color: var(--text-light); font-size: 0.95em;">Bangalore, India</p>
+                <div class="job-description">
+                    <h4>Ansys APDL Scripting & Automation</h4>
+                    <ul>
+                        <li><strong>Parametric APDL Scripts:</strong> Developed parametric APDL scripts to automate complex FEA workflows including geometry generation, mesh refinement, constraint application, and post-processing for repetitive engine casing and bolted joint analyses</li>
+                        <li><strong>Batch Automation & Sensitivity Studies:</strong> Built automated APDL macro sequences for multi-case simulations, parametric sensitivity studies, and design optimization loops enabling rapid exploration of design variables</li>
+                        <li><strong>Custom Result Extraction:</strong> Created APDL post-processing routines to extract critical results (stress concentrations, strain energy, contact forces) and generate automated reports for engineering review</li>
+                    </ul>
+
+                    <h4>Hypermesh TCL/TK Customization & Preprocessing</h4>
+                    <ul>
+                        <li><strong>TCL/TK Macro Development:</strong> Programmed custom Hypermesh TCL/TK macros and scripts to automate mesh generation, quality assurance checks, and boundary condition application for complex geometries</li>
+                        <li><strong>Automated Meshing Procedures:</strong> Developed intelligent meshing scripts that adapt mesh density based on geometric features and analysis requirements, ensuring optimal balance between accuracy and computational efficiency</li>
+                        <li><strong>Geometry Cleanup & CAD Integration:</strong> Automated CAD model cleanup, surface repair, and mesh readiness verification; streamlined geometry-to-mesh workflows reducing manual preprocessing time</li>
+                    </ul>
+
+                    <h4>Bolted Joint Design & Elastoplastic Analysis</h4>
+                    <ul>
+                        <li><strong>Bolted Joint Flange Analysis:</strong> Designed and analyzed bolted joint systems for engine casings and housings; evaluated flange stiffness, bolt preload distribution, and gasket compression under operating conditions</li>
+                        <li><strong>Elastoplastic FEA of Bolted Joints:</strong> Executed high-fidelity elastoplastic finite element analyses capturing material non-linearity, plastic deformation at bolt interfaces, and stress redistribution under load</li>
+                        <li><strong>Bolt Margin Assessment:</strong> Conducted comprehensive bolt margin studies evaluating margin of safety against yielding, fatigue, and separation; established safe operating envelopes for various load cases</li>
+                        <li><strong>Contact Mechanics in Bolted Assemblies:</strong> Modeled contact between bolt head, washer, and flange using advanced contact algorithms; validated contact pressure distributions and load transfer efficiency</li>
+                        <li><strong>Preload and Transverse Load Evaluation:</strong> Analyzed complex fastening preloads and transverse joint load capacities during severe operating events (thermal cycles, vibration, internal pressure)</li>
+                    </ul>
+
+                    <h4>Cyclic Symmetric Modal Analysis</h4>
+                    <ul>
+                        <li><strong>Cyclic Symmetry Implementation:</strong> Utilized Ansys cyclic symmetry features to analyze repetitive structures (BLISK, bladed disks) reducing model size and computational cost while maintaining physical accuracy</li>
+                        <li><strong>Sector Modal Analysis:</strong> Conducted modal analyses on fundamental sector models with periodic boundary conditions to identify system-wide natural frequencies and mode shapes</li>
+                        <li><strong>Mode Family Classification:</strong> Classified mode families (nodal diameters) across cyclic sectors enabling identification of critical resonance conditions</li>
+                        <li><strong>Frequency Response & Forced Response:</strong> Performed frequency response simulations on cyclic structures to predict vibratory response at critical engine operating speeds</li>
+                    </ul>
+
+                    <h4>Vibration Analysis & Resonance Assessment</h4>
+                    <ul>
+                        <li><strong>Custom Signal Processing (FFT):</strong> Developed custom signal processing tools using Excel-based Fast Fourier Transform (FFT) framework to achieve precise modal identification from experimental vibration data</li>
+                        <li><strong>Campbell Diagram & Resonance Maps:</strong> Generated Campbell diagrams correlating natural frequencies with engine operating speeds; validated structural Campbell margins to ensure freedom from resonance during operation</li>
+                        <li><strong>Rotor-to-Casing Interaction:</strong> Evaluated rotor-to-casing interaction margins by correlating multi-harmonic rotor frequencies with stator frequencies; ensured long-term structural integrity and resonance mitigation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">ISRO-SHAR</div>
+                        <div class="job-title">Scientist</div>
+                    </div>
+                    <div class="job-dates">Sep 2009 – Apr 2011</div>
+                </div>
+                <p style="color: var(--text-light); font-size: 0.95em;">Sriharikota, India</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Led structural design of 19-meter diameter composite radome for extreme wind loading</li>
+                        <li>Engineered design automation pipeline using MATLAB for geodesic configuration evaluation</li>
+                        <li>Streamlined CAD-to-CAE workflows with NXOpen scripting for dynamic 3D model generation</li>
+                        <li>Coupled aerodynamic loading with structural FEM solvers for comprehensive multi-disciplinary simulations</li>
+                        <li>Developed automated routines to characterize electromagnetic loss and RF transmission profiles</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="degree">M.Tech: Solid Mechanics & Design</div>
+                <div class="institution">IIT Kanpur — 2009</div>
+                <div class="grade">CGPA: 8.75</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">B.E: Mechanical Engineering</div>
+                <div class="institution">Andhra University — 2007</div>
+                <div class="grade">Percentage: 82.14%</div>
+            </div>
+
+            <h3 style="margin-top: 25px;">Academic Project</h3>
+            <div class="education-item">
+                <div class="degree">Vibration-Based Structural Health Monitoring of Composites</div>
+                <p style="margin-top: 8px; color: var(--text-light); font-size: 0.95em;">
+                    Characterized delamination influence on composite natural frequencies. Conducted experiments using laser scanning
+                    Doppler vibrometer and performed finite element model updating for critical damage identification.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Last updated: October 2026 |
+                <a href="ai-projects.html" style="color: var(--accent-color);">View AI Projects Portfolio →</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em;">Built with HTML5 & CSS3 | Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+
+    <!-- PDF Download Script -->
+    <script>
+        function downloadResumePDF() {
+            // Hide the button wrapper before printing
+            const btnWrapper = document.querySelector('.pdf-button-wrapper');
+            const originalDisplay = btnWrapper.style.display;
+            btnWrapper.style.display = 'none';
+
+            // Small delay to ensure display change takes effect
+            setTimeout(function() {
+                // Trigger print dialog
+                window.print();
+
+                // Restore button after print dialog closes
+                setTimeout(function() {
+                    btnWrapper.style.display = originalDisplay;
+                }, 500);
+            }, 100);
+        }
+
+        // Add print-specific styles
+        const printStyles = document.createElement('style');
+        printStyles.textContent = `
+            @media print {
+                body {
+                    background-color: white !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+                .container {
+                    max-width: 100% !important;
+                    padding: 20px !important;
+                }
+                header {
+                    margin-bottom: 20px !important;
+                    border-bottom: 2px solid #000 !important;
+                    padding-bottom: 20px !important;
+                }
+                .pdf-button-wrapper {
+                    display: none !important;
+                }
+                .nav-links {
+                    display: none !important;
+                }
+                footer {
+                    margin-top: 30px !important;
+                    border-top: 2px solid #000 !important;
+                    padding-top: 20px !important;
+                }
+                a {
+                    color: inherit !important;
+                    text-decoration: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(printStyles);
+    </script>
+</body>
+</html>
