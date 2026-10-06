@@ -32,7 +32,7 @@ class MarkdownProjectParser:
         # Split by project separator (---)
         sections = markdown_content.split('---')
 
-        for section in sections[1:]:  # Skip first section (header)
+        for section in sections:  # Skip first section (header)
             section = section.strip()
             if not section:
                 continue
