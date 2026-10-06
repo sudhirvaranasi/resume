@@ -1,6 +1,6 @@
 # AI Projects Portfolio
 
-## Project 1: Agentic AI Framework for CAE Automation
+## Project 1: Agentic AI Framework for CAD/CAE Automation
 **Date:** 2024 - 2025
 
 Developed a multi-agent autonomous system for orchestrating complex CAE workflows. Implemented ReAct loops with tool calling, stateful memory management, and execution graph routing to enable intelligent design space exploration and optimization without human intervention.
