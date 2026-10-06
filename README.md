@@ -17,48 +17,11 @@ A clean, professional, and responsive HTML resume website optimized for GitHub P
 - **Print-Friendly**: Both pages print beautifully for traditional resumes
 - **Fast Loading**: Pure HTML & CSS with no external dependencies
 
-### Content Organization
-- **Main Resume**: Comprehensive professional history from ISRO to Rolls-Royce
-- **Skills Dashboard**: Organized technical skills across 4 major categories
-- **AI Projects Portfolio**: Dedicated space for showcasing ML and AI work
-- **Easy Navigation**: Cross-linking between main resume and AI projects page
-
 ### Maintainability
 - **Template-Based Updates**: Clear structure for adding/removing content
 - **No Build Tools Required**: Edit directly with any text editor
 - **Self-Documenting**: Instructions included in HTML for adding projects
 - **Easy Customization**: Centralized CSS variables for quick color/style changes
-
-## 🚀 Getting Started with GitHub Pages
-
-### Option 1: Using GitHub Web Interface
-1. Create a new GitHub repository named `sudhir-varanasi.github.io` (replace with your GitHub username)
-2. Go to your repository settings
-3. Upload `index.html` and `ai-projects.html` files
-4. Your site will be live at `https://sudhir-varanasi.github.io`
-
-### Option 2: Using Git Command Line
-```bash
-# Clone your GitHub Pages repository
-git clone https://github.com/yourusername/yourusername.github.io
-cd yourusername.github.io
-
-# Copy the HTML files
-cp path/to/index.html .
-cp path/to/ai-projects.html .
-
-# Commit and push
-git add .
-git commit -m "Add resume website"
-git push origin main
-```
-
-### Option 3: Using GitHub Desktop
-1. Clone your GitHub Pages repository to your computer
-2. Copy `index.html` and `ai-projects.html` into the repository folder
-3. Open GitHub Desktop, commit the changes with a message like "Add resume website"
-4. Click "Push to origin"
-5. Your site goes live in 1-2 minutes
 
 ## 📝 How to Update Your Resume
 
@@ -130,40 +93,8 @@ The structure is organized into clear sections:
 
 ## 🤖 How to Add AI Projects
 
-See the **AI Projects Portfolio** section in `ai-projects.html` for detailed instructions. Quick summary:
+### Update project.md file following the template syntax. ai-projects.html file will be build using project.md file content. 
 
-### Project Card Template
-
-```html
-<div class="project-card">
-    <div class="project-header">
-        <div class="project-title">Your Project Title</div>
-        <div class="project-date">2024 - 2025</div>
-    </div>
-    <p class="project-description">
-        Describe your project in 2-3 sentences. What problem did it solve? 
-        What techniques or approaches did you use?
-    </p>
-    <div class="tech-stack">
-        <strong>Technologies:</strong>
-        <div class="tags">
-            <span class="tag">Technology 1</span>
-            <span class="tag">Technology 2</span>
-            <span class="tag secondary">Category Tag</span>
-            <span class="tag highlight">Important Tag</span>
-        </div>
-    </div>
-    <div class="project-links">
-        <a href="https://github.com/yourrepo" target="_blank">GitHub</a>
-        <a href="https://yourproject.com" target="_blank">Demo</a>
-    </div>
-</div>
-```
-
-### Tag Styles
-- `.tag` - Blue, for technologies (PyTorch, Python, LangChain, etc.)
-- `.tag.secondary` - Green, for categories (RAG, SciML, Agentic AI, etc.)
-- `.tag.highlight` - Amber, for important concepts (Multi-Agent, Optimization, etc.)
 
 ## 🎨 Customizing Appearance
 
@@ -219,7 +150,6 @@ The design is fully responsive:
 
 - **No External Dependencies**: Pure HTML & CSS (no jQuery, Bootstrap, etc.)
 - **Fast Load Time**: All-in-one file, minimal CSS
-- **SEO Friendly**: Proper semantic HTML structure
 - **Accessibility**: Semantic headings, readable color contrast, proper alt attributes
 
 ## 🔐 Privacy & Security
@@ -229,37 +159,3 @@ The design is fully responsive:
 - No cookies or local storage
 - Safe to use on any device
 
-## 📊 SEO Optimization
-
-To improve search engine visibility, update the meta tags in the `<head>` section:
-
-```html
-<meta name="description" content="Your professional summary">
-<meta name="keywords" content="software engineer, CAE, automation, AI, machine learning">
-<meta name="author" content="Sudhir Varanasi">
-```
-
-## 🆘 Troubleshooting
-
-### Site not appearing on GitHub
-- Ensure your repository is named `yourusername.github.io`
-- Wait 1-2 minutes for GitHub to build the site
-- Check repository settings > Pages to ensure it's enabled
-
-### Links not working
-- Ensure both `index.html` and `ai-projects.html` are in the same directory
-- Test links locally before pushing to GitHub
-
-### Dark mode not working
-- This is system-dependent (Settings > Display > Dark Mode)
-- Both light and dark versions are automatically applied
-
-## 📧 Contact & Support
-
-For issues or questions about the resume website, refer to the main `index.html` file for contact information.
-
----
-
-**Version**: 1.0  
-**Last Updated**: October 2026  
-**Status**: Ready for Production
